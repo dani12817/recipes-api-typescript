@@ -23,7 +23,7 @@ export class RecipeDto {
     @IsDate()
     updated_at?: Date;
 
-    constructor(payload: any) {
+    constructor(payload: any = {}) {
         this.title = payload.title;
         this.making_time = payload.making_time;
         this.serves = payload.serves;
