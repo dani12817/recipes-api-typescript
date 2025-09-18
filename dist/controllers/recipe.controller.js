@@ -7,6 +7,7 @@ const recipeService = new recipie_service_1.RecipeService();
 class RecipeControllers {
     static async list(req, res) {
         try {
+            console.log("list");
             const recipes = await recipeService.getAll();
             res.status(200).json({ recipes });
         }
@@ -18,6 +19,7 @@ class RecipeControllers {
     static async create(req, res) {
         try {
             let recipeDto = new recipe_dto_1.RecipeDto(req.body);
+            console.log("create", recipeDto);
             if (!RecipeControllers.missingRequiredFields(recipeDto, res)) {
                 const recipe = await recipeService.create(recipeDto);
                 res.status(200).json(RecipeControllers.buildResponseJson(recipe, "Recipe successfully created!"));
@@ -32,6 +34,7 @@ class RecipeControllers {
         try {
             const id = parseInt(req.params.id);
             const recipe = await recipeService.getById(id);
+            console.log("get", id);
             if (!recipe) {
                 res.status(404).json({ message: "No recipe found" });
             }
@@ -48,6 +51,7 @@ class RecipeControllers {
         try {
             const id = parseInt(req.params.id);
             const recipe = await recipeService.getById(id);
+            console.log("get", id);
             if (!recipe) {
                 res.status(404).json({ message: "No recipe found" });
             }
@@ -69,6 +73,7 @@ class RecipeControllers {
         try {
             const id = parseInt(req.params.id);
             const deleteResult = await recipeService.delete(id);
+            console.log("get", id);
             if (!deleteResult.affected) {
                 res.status(404).json({ message: "No recipe found" });
             }

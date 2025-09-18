@@ -19,7 +19,7 @@ class RecipeDto {
     cost;
     created_at;
     updated_at;
-    constructor(payload) {
+    constructor(payload = {}) {
         this.title = payload.title;
         this.making_time = payload.making_time;
         this.serves = payload.serves;
