@@ -47,11 +47,11 @@ __decorate([
     __metadata("design:type", Number)
 ], Recipe.prototype, "cost", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Date)
 ], Recipe.prototype, "created_at", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", Date)
 ], Recipe.prototype, "updated_at", void 0);
 exports.Recipe = Recipe = __decorate([

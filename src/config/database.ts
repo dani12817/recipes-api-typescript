@@ -19,6 +19,7 @@ export const RecipeDatabase = new DataSource ({
 });
 
 /**
+PGHOST='ep-spring-shadow-ad3p0cm9-pooler.c-2.us-east-1.aws.neon.tech'
 PGDATABASE='neondb'
 PGUSER='neondb_owner'
 PGPASSWORD='npg_9iUMPtXTkz8s'
