@@ -110,7 +110,7 @@ export class RecipeControllers {
         if (!recipe.cost) missingFields.push("cost");
 
         if (missingFields.length) {
-            res.status(404).json({
+            res.status(200).json({
                 message: "Recipe creation failed!",
                 required: missingFields.join(", ")
             });
